@@ -1,0 +1,26 @@
+
+*.pdf
+*.DS_Store
+*.xlsx
+*.xls
+*.docx
+*.doc
+/configuration.php
+
+*.pdf
+*.DS_Store
+*.xlsx
+*.xls
+*.docx
+*.doc
+
+/images
+/images/
+/nbproject/private/
+/newsletterimgs/
+
+/cache/
+
+# node packages
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules/
