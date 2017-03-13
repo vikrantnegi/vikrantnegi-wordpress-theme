@@ -48,6 +48,10 @@ a {
 			left: -999em;
 			z-index: 99999;
 
+			//todo - subnav
+			background-color: #fff;
+			padding: 5px 10px;
+
 			ul {
 				left: -999em;
 				top: 0;
@@ -105,12 +109,15 @@ a {
 .nav-menu > li > a {
 	color: inherit;
 	text-transform: uppercase;
-
 }
 
 .site-menu {
 	flex: 1 1 100%;
-	> ul { float: right; }
+	> ul {
+		float: right;
+
+		> li:not(:last-of-type) { margin-right: 1.250em; }
+	}
 }
 
 
@@ -168,7 +175,6 @@ a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 0.9em;
 		&:not(:last-of-type) { margin-right: 10px; }
 	}
 }
