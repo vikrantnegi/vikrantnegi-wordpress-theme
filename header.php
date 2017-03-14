@@ -47,8 +47,8 @@
 			</a>
 		</div>
 
-		<div class="container">
-			<div class="site-branding<?php if( is_singular() ) { echo ' screen-reader-text'; } ?>">
+		<div class="site-branding<?php if( is_singular() ) { echo ' screen-reader-text'; } ?>">
+			<div class="container">
 				<?php
 				if ( is_front_page() && is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -62,10 +62,15 @@
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
 				endif; ?>
-			</div><!-- .site-branding -->
+			</div>
+		</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vikrantnegi2' ); ?></button>
+		<nav id="site-navigation" class="main-navigation<?php if( is_singular() ) { echo ' screen-reader-text'; } ?>" role="navigation">
+			<div class="container">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="screen-reader-text">Toggle navigation</span>
+					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+				</button>
 				<div class="social-links">
 					<a href="#">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -88,8 +93,8 @@
 					</a>
 				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'site-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-		</div><!-- .container -->
+			</div>
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

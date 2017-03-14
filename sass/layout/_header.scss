@@ -5,18 +5,17 @@
     box-shadow: 0 1px 8px 0 rgba(0,0,0,0.03);
     font-size: 1rem;
     margin-bottom: 6em;
-    padding: 0 0 1em;
 
     //center when branding collapsed
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    min-height: 75px;
 }
 
 .site-branding {
     padding: 5em 0;
+    width: 100%;
 }
 
 .site-title {
@@ -70,3 +69,17 @@
   text-align: center;
 }
 
+
+//Mobile media queries
+@media screen and (max-width: 767px) {
+  //remove position so that hamburger menu can go top
+  .main-navigation { position: initial; }
+  .site-header {
+    position: relative;
+    text-align: center;
+  }
+
+  .site-branding {
+    padding: 8em 0 1em;
+  }
+}
