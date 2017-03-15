@@ -40,7 +40,7 @@
 
   </div><!-- /.article-body -->
 
-  <div class="article-meta">
+  <aside class="article-meta">
     <?php
       if ( 'post' === get_post_type() ) : ?>
       <div class="entry-meta">
@@ -48,6 +48,6 @@
       </div><!-- .entry-meta -->
       <?php
     endif; ?>
-  </div><!-- /.article-meta -->
+  </aside><!-- /.article-meta -->
 
 </article><!-- #post-## -->
