@@ -26,6 +26,21 @@
 	font-size: 1.4em;
 }
 
+.error404 input[type="search"],
+.error-404 input[type="search"],
+.search-no-results input[type="search"] {
+	width: 100%;
+	margin-bottom: 4em;
+	padding: .5em 1em;
+}
+
+.error404 .search-submit,
+.error-404 .search-submit,
+.search-no-results .search-submit {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
 @media screen and (max-width: 700px){
 	.site-main { font-size: 0.8em; }
 }
