@@ -1809,6 +1809,30 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+  padding: 2em 0;
+  text-align: center;
+  color: #fff;
+  background-color: #0d3458;
+  font-family: "Raleway", sans-serif;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+.site-info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
