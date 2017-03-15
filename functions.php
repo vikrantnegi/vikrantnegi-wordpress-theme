@@ -105,7 +105,7 @@ function vikrantnegi2_scripts() {
 	wp_enqueue_style( 'vikrantnegi2-style', get_stylesheet_uri() );
 
 	//Add Google Fonts: Roboto
-	wp_enqueue_style( 'vikrantnegi2-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,700|Raleway:300,400' );
+	wp_enqueue_style( 'vikrantnegi2-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,700|Raleway:300,400,500,700' );
 
 	wp_enqueue_script( 'vikrantnegi2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
