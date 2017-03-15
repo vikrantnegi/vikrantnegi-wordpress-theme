@@ -37,14 +37,9 @@ function vikrantnegi2_posted_on() {
 	// Display the author avatar if the author has a Gravatar
 	$author_id = get_the_author_meta( 'ID' );
 	if ( vikrantnegi2_validate_gravatar( $author_id ) ) {
-		echo '<div class="meta-content has-avatar">';
 		echo '<div class="author-avatar">' . get_avatar( $author_id ) . '</div>';
-	} else {
-		echo '<div class="meta-content">';
 	}
-
 		echo '<span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-	echo '</div><!-- .meta-content -->';
 
 }
 endif;
@@ -185,3 +180,52 @@ function vikrantnegi2_validate_gravatar($id_or_email) {
 		return false;
 	}
 }
+
+/**
+* Customize the exceprt mread-more function
+*/
+function vikrantnegi2_excerpt_more( $more ) {
+	return "...";
+}
+add_filter( 'excerpt_more', 'vikrantnegi2_excerpt_more' );
+
+
+/**
+*index meta
+*/
+if ( ! function_exists( 'vikrantnegi2_index_posted_on' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function vikrantnegi2_index_posted_on() {
+	$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf(
+		esc_html_x( '%s', 'post date', 'vikrantnegi2' ), $time_string
+	);
+
+	$byline = sprintf(
+		esc_html_x( '%s', 'post author', 'vikrantnegi2' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	);
+
+	// Display the author avatar if the author has a Gravatar
+	$author_id = get_the_author_meta( 'ID' );
+	if ( vikrantnegi2_validate_gravatar( $author_id ) ) {
+		echo '<div class="author"><span class="author-avatar">' . get_avatar( $author_id ) . '</span><span class="byline"' . $byline . '</span></div>';
+	}
+		echo '<div class="time"><span class="screen-reader-text">Date</span><i class="fa fa-clock-o" aria-hidden="true"></i>' . $posted_on . '</div>';
+		// WPCS: XSS OK.
+
+}
+endif;

@@ -9,39 +9,45 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+<article id="post-<?php the_ID(); ?>" <?php post_class('index-article'); ?>>
+  <div class="article-body">
+    <header class="entry-header">
+      <?php
+      if ( is_single() ) :
+        the_title( '<h1 class="entry-title">', '</h1>' );
+      else :
+        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+      endif;
+    ?>
+    </header><!-- .entry-header -->
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php vikrantnegi2_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+    <div class="entry-content">
+      <?php
+        the_excerpt();
+     ?>
+    </div><!-- .entry-content -->
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'vikrantnegi2' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+    <div class="learn-more">
+      <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+        <?php
+          printf(
+            wp_kses( __( 'Learn more %s <span class="meta-nav">>></span>', 'vikrantnegi2' ), array( 'span' => array( 'class' => array() ) ) ),
+            the_title( '<span class="screen-reader-text">"', '"</span>', false )
+          );
+        ?>
+      </a>
+    </div>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'vikrantnegi2' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+  </div><!-- /.article-body -->
 
-	<footer class="entry-footer">
-		<?php vikrantnegi2_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+  <div class="article-meta">
+    <?php
+      if ( 'post' === get_post_type() ) : ?>
+      <div class="entry-meta">
+        <?php vikrantnegi2_index_posted_on(); ?>
+      </div><!-- .entry-meta -->
+      <?php
+    endif; ?>
+  </div><!-- /.article-meta -->
+
 </article><!-- #post-## -->

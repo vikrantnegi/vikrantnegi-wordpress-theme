@@ -28,9 +28,8 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'vikrantnegi2' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'vikrantnegi2' ) ),
+					number_format_i18n( get_comments_number() )
 				);
 			?>
 		</h2>
@@ -52,6 +51,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size' => '50',
 				) );
 			?>
 		</ol><!-- .comment-list -->
