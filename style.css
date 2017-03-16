@@ -445,6 +445,12 @@ dd {
   margin: 0 1.5em 1.5em;
 }
 
+@media screen and (max-width: 767px) {
+  ul, ol {
+    margin: 0 0 1.5em 0.5em;
+  }
+}
+
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
@@ -681,7 +687,7 @@ a:hover, a:active {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 600px) {
   .menu-toggle {
     display: none;
   }
@@ -730,9 +736,19 @@ a:hover, a:active {
   background-color: transparent;
   border: 0;
   position: absolute;
-  top: 5%;
-  right: 1%;
-  z-index: 1;
+  top: 10%;
+  right: 5%;
+  z-index: 11;
+  padding: 0;
+}
+
+.menu-toggle:hover, .menu-toggle:focus {
+  box-shadow: none;
+}
+
+.menu-toggle i.fa {
+  font-size: 1.8em;
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -835,10 +851,13 @@ a:hover, a:active {
 }
 
 @media screen and (max-width: 767px) {
-  .site-menu {
+  [class^="menu"] {
     -webkit-flex: initial;
     -ms-flex: initial;
     flex: initial;
+  }
+  .main-navigation:before {
+    display: none;
   }
   .main-navigation li {
     display: block;
@@ -852,6 +871,28 @@ a:hover, a:active {
   .nav-next {
     width: 100%;
     padding-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-navigation.toggled .menu-toggle {
+    position: fixed;
+    top: 5%;
+  }
+  .main-navigation.toggled .site-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0d3458;
+    width: 100%;
+    height: 100vh;
+    padding-top: 74px;
+    z-index: 10;
+    opacity: 0.98;
+  }
+  .main-navigation.toggled .site-menu > li {
+    margin-bottom: 10px;
   }
 }
 
@@ -1403,12 +1444,6 @@ a:hover, a:active {
 .search-no-results .search-submit {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
-}
-
-@media screen and (max-width: 700px) {
-  .site-main {
-    font-size: 0.8em;
-  }
 }
 
 /*--------------------------------------------------------------

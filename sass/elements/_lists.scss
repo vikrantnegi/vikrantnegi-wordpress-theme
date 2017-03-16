@@ -23,3 +23,7 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
+@media screen and (max-width: 767px) {
+	ul, ol { margin: 0 0 1.5em 0.5em; }
+}

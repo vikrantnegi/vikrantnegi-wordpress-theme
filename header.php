@@ -69,7 +69,7 @@
 			<div class="container">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 					<span class="screen-reader-text">Toggle navigation</span>
-					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+					<i class="fa fa-bars" aria-hidden="true"></i>
 				</button>
 				<div class="social-links">
 					<a href="<?php echo get_option('twitter'); ?>" target="_blank" rel="noopener noreferrer">
