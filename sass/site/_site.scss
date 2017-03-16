@@ -93,11 +93,6 @@
 	text-decoration: none;
 }
 
-.entry-title a:hover,
-.entry-title a:focus {
-	text-decoration: underline;
-}
-
 .byline,
 .updated:not(.published){
 	display: none;
@@ -415,6 +410,11 @@
 	.learn-more a {
 		text-transform: uppercase;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
 	}
 }
 

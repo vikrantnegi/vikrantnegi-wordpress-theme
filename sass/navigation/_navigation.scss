@@ -161,6 +161,8 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	position: relative;
+	z-index: 1;
 
 	a {
 		color: $color__accent;

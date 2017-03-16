@@ -149,3 +149,57 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom social link menu
+ */
+function custom_settings_add_menu() {
+  add_menu_page( 'Social Settings', 'Social Settings', 'manage_options', 'custom-settings', 'custom_settings_page', null, 99 );
+}
+add_action( 'admin_menu', 'custom_settings_add_menu' );
+
+// Create Custom Global Settings
+function custom_settings_page() { ?>
+  <div class="wrap">
+    <h1>Custom Settings</h1>
+    <form method="post" action="options.php">
+       <?php
+           settings_fields( 'section' );
+           do_settings_sections( 'theme-options' );
+           submit_button();
+       ?>
+    </form>
+  </div>
+<?php }
+
+// Twitter
+function setting_twitter() { ?>
+  <input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
+<?php }
+
+function setting_github() { ?>
+  <input type="text" name="github" id="github" value="<?php echo get_option('github'); ?>" />
+<?php }
+
+function setting_codepen() { ?>
+  <input type="text" name="codepen" id="codepen" value="<?php echo get_option('codepen'); ?>" />
+<?php }
+
+function setting_stackoverflow() { ?>
+  <input type="text" name="stackoverflow" id="stackoverflow" value="<?php echo get_option('stackoverflow'); ?>" />
+<?php }
+
+function custom_settings_page_setup() {
+  add_settings_section( 'section', 'All Settings', null, 'theme-options' );
+  add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
+	add_settings_field( 'github', 'GitHub URL', 'setting_github', 'theme-options', 'section' );
+	add_settings_field( 'codepen', 'Codepen URL', 'setting_codepen', 'theme-options', 'section' );
+	add_settings_field( 'stackoverflow', 'Stackoverflow URL', 'setting_stackoverflow', 'theme-options', 'section' );
+
+  register_setting('section', 'twitter');
+	register_setting('section', 'github');
+	register_setting('section', 'codepen');
+	register_setting('section', 'stackoverflow');
+
+}
+add_action( 'admin_init', 'custom_settings_page_setup' );

@@ -704,6 +704,8 @@ a:hover, a:active {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
 }
 
 .social-links a {
@@ -1458,11 +1460,6 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-.entry-title a:hover,
-.entry-title a:focus {
-  text-decoration: underline;
-}
-
 .byline,
 .updated:not(.published) {
   display: none;
@@ -1776,6 +1773,10 @@ a:hover, a:active {
 .index-article .learn-more a {
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.index-article .learn-more a:hover, .index-article .learn-more a:focus {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 767px) {

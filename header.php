@@ -72,24 +72,24 @@
 					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 				</button>
 				<div class="social-links">
-					<a href="#">
+					<a href="<?php echo get_option('twitter'); ?>" target="_blank" rel="noopener noreferrer">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
 						<span class="screen-reader-text">Twitter</span>
 					</a>
 
-					<a href="#">
+					<a href="<?php echo get_option('github'); ?>" target="_blank" rel="noopener noreferrer">
 						<i class="fa fa-github" aria-hidden="true"></i>
 						<span class="screen-reader-text">Github</span>
 					</a>
 
-					<a href="#">
+					<a href="<?php echo get_option('codepen'); ?>" target="_blank" rel="noopener noreferrer">
 						<i class="fa fa-codepen" aria-hidden="true"></i>
 						<span class="screen-reader-text">Codepen</span>
 					</a>
 
-					<a href="#">
-						<i class="fa fa-facebook" aria-hidden="true"></i>
-						<span class="screen-reader-text">Facebook</span>
+					<a href="<?php echo get_option('stackoverflow'); ?>" target="_blank" rel="noopener noreferrer">
+						<i class="fa fa-stack-overflow" aria-hidden="true"></i>
+						<span class="screen-reader-text">Stack Overflow</span>
 					</a>
 				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'site-menu' ) ); ?>
