@@ -115,6 +115,8 @@ function vikrantnegi2_scripts() {
 
 	wp_enqueue_script( 'vikrantnegi2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'vikrantnegi2-prism', get_template_directory_uri() . '/js/prism.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'vikrantnegi2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

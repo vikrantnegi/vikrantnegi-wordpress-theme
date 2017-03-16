@@ -27,12 +27,49 @@ h1, h2, h3, h4, h5, h6 {
 
 
 //Heading Sizes
-h1 { font-size: 2.5em; }
-h2 { font-size: 2.2em; }
-h3 { font-size: 2em; }
-h4 { font-size: 1.8em; }
-h5 { font-size: 1.6em; }
-h6 { font-size: 1.4em; }
+
+h1,h2,h3,h4 {
+    font-family: "Proxima N",sans-serif;
+    font-weight: 600
+}
+
+h1 a,h2 a,h3 a,h4 a {
+    text-decoration: none
+}
+
+h1 {
+    font-size: 3rem
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size:2.6rem
+    }
+}
+
+h2 {
+    font-size: 2.4rem
+}
+
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size:2rem
+    }
+}
+
+h3 {
+    font-size: 2rem
+}
+
+@media screen and (max-width: 767px) {
+    h3 {
+        font-size:1.8rem
+    }
+}
+
+h4 {
+    font-size: 1.8rem
+}
 
 h1 a,h2 a,h3 a,h4 a {
     text-decoration: none
@@ -55,17 +92,16 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(0.9375);
 	line-height: $font__line-height-pre;
-	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: 10px 20px;
+	margin: 2em 0;
 }
 
 code, kbd, tt, var {
 	font-family: $font__code;
-	@include font-size(0.9375);
+	font-size: 1.6rem;
 }
 
 abbr, acronym {
@@ -80,4 +116,13 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+.entry-content {
+	h2 { margin: 3em 0 1em; }
+	P { margin-bottom: 1em; }
+}
+
+a:not(.no-ul) {
+	text-decoration: underline;
 }

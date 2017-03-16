@@ -280,28 +280,47 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6em;
 }
 
+h1, h2, h3, h4 {
+  font-family: "Proxima N",sans-serif;
+  font-weight: 600;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+  text-decoration: none;
+}
+
 h1 {
-  font-size: 2.5em;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 2.6rem;
+  }
 }
 
 h2 {
-  font-size: 2.2em;
+  font-size: 2.4rem;
+}
+
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  h3 {
+    font-size: 1.8rem;
+  }
 }
 
 h4 {
-  font-size: 1.8em;
-}
-
-h5 {
-  font-size: 1.6em;
-}
-
-h6 {
-  font-size: 1.4em;
+  font-size: 1.8rem;
 }
 
 h1 a, h2 a, h3 a, h4 a {
@@ -327,19 +346,16 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 9.375px;
-  font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6em;
+  padding: 10px 20px;
+  margin: 2em 0;
 }
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 9.375px;
-  font-size: 0.9375rem;
+  font-size: 1.6rem;
 }
 
 abbr, acronym {
@@ -354,6 +370,18 @@ mark, ins {
 
 big {
   font-size: 125%;
+}
+
+.entry-content h2 {
+  margin: 3em 0 1em;
+}
+
+.entry-content P {
+  margin-bottom: 1em;
+}
+
+a:not(.no-ul) {
+  text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -525,15 +553,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #0d3458;
+  color: inherit;
 }
 
 a:visited {
-  color: #0d3458;
+  color: inherit;
 }
 
 a:hover, a:focus, a:active {
-  color: #1a69b1;
+  color: inherit;
 }
 
 a:focus {
@@ -1806,6 +1834,142 @@ a:hover, a:active {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
   display: block;
+}
+
+/*--------------------------------------------------------------
+# Prism
+--------------------------------------------------------------*/
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+json+scss */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+.token.function {
+  color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }
 
 /*--------------------------------------------------------------

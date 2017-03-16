@@ -11,9 +11,9 @@ $color__accent: #FFC107;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $color_primary;
-$color__link-visited: $color_primary;
-$color__link-hover: lighten($color_primary, 20%);
+$color__link: inherit;
+$color__link-visited: inherit;
+$color__link-hover: inherit;
 $color__text-main: rgba(0,0,0,0.8);
 $color_text-gray: #ABB7B7;
 
