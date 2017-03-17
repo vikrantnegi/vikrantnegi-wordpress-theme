@@ -280,11 +280,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6em;
 }
 
-h1, h2, h3, h4 {
-  font-family: "Proxima N",sans-serif;
-  font-weight: 600;
-}
-
 h1 a, h2 a, h3 a, h4 a {
   text-decoration: none;
 }
@@ -488,8 +483,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #FFC107;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+  border-color: #ffc721;
+  background: #ffc721;
 }
 
 button:active, button:focus,
@@ -499,8 +494,8 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: #FFC107;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-color: #ffc721;
+  background: #ffc721;
 }
 
 input[type="text"],
@@ -2121,4 +2116,23 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+/* Contact Page*/
+.contact {
+  padding: 15px;
+background: #FFFFFF;
+box-shadow: 0 2px 0 1px rgba(0,0,0,0.08), 0 2px 2px 0 rgba(0,0,0,0.16);
+border-radius: 3px;
+}
+
+.contact h2 {
+  text-transform: uppercase;
+border-bottom: 1px solid rgba(0,0,0,0.16);
+margin-top: 0;
+padding-bottom: 5px;
+}
+
+.contact input[type="submit"] {
+  text-transform: uppercase;
 }

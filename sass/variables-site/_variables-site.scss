@@ -19,8 +19,8 @@ $color_text-gray: #ABB7B7;
 
 $color_border: rgba(0,0,0,0.08);
 $color__border-button: $color__accent;
-$color__border-button-hover: $color__accent;
-$color__border-button-focus: $color__accent;
+$color__border-button-hover: lighten($color__accent, 5%);
+$color__border-button-focus: lighten($color__accent, 5%);
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
