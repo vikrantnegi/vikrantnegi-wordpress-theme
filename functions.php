@@ -189,17 +189,23 @@ function setting_stackoverflow() { ?>
   <input type="text" name="stackoverflow" id="stackoverflow" value="<?php echo get_option('stackoverflow'); ?>" />
 <?php }
 
+function setting_theme_version() { ?>
+  <input type="text" name="themeversion" id="themeversion" value="<?php echo get_option('themeversion'); ?>" />
+<?php }
+
 function custom_settings_page_setup() {
   add_settings_section( 'section', 'All Settings', null, 'theme-options' );
   add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
 	add_settings_field( 'github', 'GitHub URL', 'setting_github', 'theme-options', 'section' );
 	add_settings_field( 'codepen', 'Codepen URL', 'setting_codepen', 'theme-options', 'section' );
 	add_settings_field( 'stackoverflow', 'Stackoverflow URL', 'setting_stackoverflow', 'theme-options', 'section' );
+	add_settings_field( 'themeversion', 'Theme Version URL', 'setting_theme_version', 'theme-options', 'section' );
 
   register_setting('section', 'twitter');
 	register_setting('section', 'github');
 	register_setting('section', 'codepen');
 	register_setting('section', 'stackoverflow');
+	register_setting('section', 'themeversion');
 
 }
 add_action( 'admin_init', 'custom_settings_page_setup' );

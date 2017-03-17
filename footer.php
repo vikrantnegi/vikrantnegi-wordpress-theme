@@ -18,7 +18,7 @@
 			<small class="copyright">
 				By Vikrant Negi. No rights reserved.
 			</small>
-			<small class="site-version">v 2.0</small>
+			<small class="site-version"><a href="<?php echo get_option('themeversion'); ?>">v 2.0</a></small>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

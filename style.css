@@ -2011,7 +2011,6 @@ pre[class*="language-"] {
   text-align: center;
   color: #fff;
   background-color: #0d3458;
-  font-family: "Raleway", sans-serif;
 }
 
 .site-footer a {
@@ -2116,23 +2115,4 @@ object {
 
 .gallery-caption {
   display: block;
-}
-
-/* Contact Page*/
-.contact {
-  padding: 15px;
-background: #FFFFFF;
-box-shadow: 0 2px 0 1px rgba(0,0,0,0.08), 0 2px 2px 0 rgba(0,0,0,0.16);
-border-radius: 3px;
-}
-
-.contact h2 {
-  text-transform: uppercase;
-border-bottom: 1px solid rgba(0,0,0,0.16);
-margin-top: 0;
-padding-bottom: 5px;
-}
-
-.contact input[type="submit"] {
-  text-transform: uppercase;
 }
